@@ -4,15 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Simple CSS to make the image responsive */
+        /* Basic reset for margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Make the image responsive */
         img {
-            width: 100%;   /* Makes the image take up the full width of the screen */
-            height: auto;  /* Keeps the image's height in proportion to its width */
+            width: 100%;    /* Makes the image fill 100% of the screen width */
+            height: auto;   /* Adjusts the height automatically to maintain aspect ratio */
+            display: block; /* Ensures there's no unwanted space below the image */
+        }
+
+        /* Body styles to ensure full-page image display */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff;  /* White background */
+            overflow-x: hidden;  /* Prevents horizontal scroll */
         }
     </style>
 </head>
 <body>
 
+    <!-- Image will fill the entire screen width, no title or text -->
     <img src="IMG_3168.jpeg" alt="Character Image">
 
 </body>
