@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Image</title>
+    <title>Full Screen Image</title>
     <style>
-        /* Remove default margin and padding */
+        /* Make sure the body and html elements take up the full screen */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;  /* Prevent scrolling */
+            overflow: hidden; /* Prevents scrolling */
         }
 
-        /* Image should always fit the full screen */
+        /* Full-screen image styling */
         img {
-            position: absolute;  /* Position it to fill the entire screen */
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;         /* Viewport width: fill 100% of the screen width */
-            height: 100vh;        /* Viewport height: fill 100% of the screen height */
-            object-fit: cover;    /* Image will cover the entire screen */
+            width: 100vw;  /* 100% of the viewport width */
+            height: 100vh; /* 100% of the viewport height */
+            object-fit: cover; /* Ensures the image covers the screen without distortion */
         }
     </style>
 </head>
 <body>
 
-    <!-- Full-screen image that adapts to any screen size -->
-    <img src="IMG_3168.jpeg" alt="Character Image">
+    <!-- Image that covers the entire screen -->
+    <img src="IMG_3168.jpeg" alt="Full-screen image">
 
 </body>
 </html>
