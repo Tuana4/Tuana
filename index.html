@@ -3,34 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Display</title>
+    <title>Full-Screen Image in Portrait</title>
     <style>
-        /* Remove default margin and padding */
+        /* Reset default margin and padding */
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;  /* Full height for the image */
-            overflow: hidden; /* Hide overflow by default */
+            height: 100%; /* Full height */
+            overflow: hidden; /* Hide overflow */
         }
 
         /* Container for the image */
         .image-container {
             width: 100%;
-            height: 100%;
-            overflow: hidden; /* Ensures no scrollbars for overflow */
+            height: 100vh;  /* Full viewport height */
         }
 
-        /* Make sure the image is fully visible, resize based on screen size */
+        /* Ensure the image covers the screen in portrait mode */
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;  /* Ensures the image fills the screen without leaving white space */
+            object-fit: cover;  /* Fills the container */
+            object-position: center; /* Keeps the image centered */
+        }
+
+        /* Only apply styles for portrait mode */
+        @media (orientation: portrait) {
+            body, .image-container {
+                height: 100vh;  /* Ensure full screen height in portrait */
+            }
+
+            img {
+                width: 100%; /* Make sure image width is 100% */
+                height: 100%; /* Make sure image height is 100% */
+                object-fit: cover;  /* Fills the screen completely */
+            }
+        }
+
+        /* Optionally, add styles for landscape mode (no changes for now) */
+        @media (orientation: landscape) {
+            img {
+                object-fit: contain; /* In landscape mode, the image won't stretch */
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Container for the image -->
+    <!-- Fullscreen image container -->
     <div class="image-container">
         <img src="IMG_3168.jpeg" alt="Full Image">
     </div>
