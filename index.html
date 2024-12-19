@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image</title>
     <style>
-        /* Remove default margins and padding from the body and html */
+        /* Ensure body and html take up the full height of the screen */
         html, body {
-            height: 100%;     /* Take up the full height of the screen */
-            margin: 0;        /* Remove default margins */
-            padding: 0;       /* Remove default padding */
+            height: 100%;        /* Full height of the screen */
+            margin: 0;           /* Remove default margins */
+            padding: 0;          /* Remove default padding */
         }
 
-        /* Ensure the image covers the entire screen */
+        /* The image should cover the whole screen */
         img {
-            object-fit: cover;  /* Makes the image cover the screen without distortion */
-            width: 100%;         /* Make the image take the full width */
-            height: 100%;        /* Make the image take the full height */
-            position: absolute;  /* Position the image at the top-left corner */
-            top: 0;              /* Position it to the top */
-            left: 0;             /* Position it to the left */
-            z-index: -1;         /* Place the image behind the content */
+            object-fit: cover;   /* Image will cover the entire screen */
+            width: 100%;          /* Ensure the image takes full width */
+            height: 100%;         /* Ensure the image takes full height */
+            position: absolute;   /* Position the image absolutely to fill screen */
+            top: 0;               /* Place the image at the top */
+            left: 0;              /* Place the image at the left */
+            z-index: -1;          /* Keep the image behind anything else */
         }
     </style>
 </head>
 <body>
 
-    <!-- The image that will fill the whole screen -->
+    <!-- Image that will fill the entire screen -->
     <img src="IMG_3168.jpeg" alt="Character Image">
 
 </body>
