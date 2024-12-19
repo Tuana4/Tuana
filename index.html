@@ -5,28 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Display</title>
     <style>
-        /* Remove margin and padding to ensure no space around the image */
+        /* Remove default margin and padding */
         html, body {
             margin: 0;
             padding: 0;
+            height: 100%;  /* Full height for the image */
+            overflow: hidden; /* Hide overflow by default */
+        }
+
+        /* Container for the image */
+        .image-container {
+            width: 100%;
             height: 100%;
-            overflow: hidden; /* Disable scrolling */
+            overflow: auto; /* Allows scrolling if the image doesn't fit */
         }
 
-        /* Make the image responsive */
+        /* Make sure the image is fully visible, resize based on screen size */
         img {
-            width: 100%;  /* Ensure the image takes the full width of the screen */
-            height: auto; /* Maintain aspect ratio */
-            max-height: 100vh; /* Ensure the height doesn't exceed the screen height */
-            object-fit: contain; /* Keep the entire image visible without cropping */
+            width: 100%;  /* Fill the screen width */
+            height: auto;  /* Adjust height to keep the aspect ratio */
+            max-width: 100vw;  /* Prevent image from exceeding viewport width */
+            max-height: 100vh; /* Prevent image from exceeding viewport height */
+            object-fit: contain;  /* Ensure the entire image is visible */
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Your image -->
-    <img src="IMG_3168.jpeg" alt="Full Screen Image">
+    <!-- Container for the image to allow scrolling if needed -->
+    <div class="image-container">
+        <img src="IMG_3168.jpeg" alt="Full Image">
+    </div>
 
 </body>
 </html>
