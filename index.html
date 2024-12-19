@@ -4,32 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Basic reset for margin and padding */
+        /* Reset body margin to remove extra space */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Make the image responsive */
-        img {
-            width: 100%;    /* Makes the image fill 100% of the screen width */
-            height: auto;   /* Adjusts the height automatically to maintain aspect ratio */
-            display: block; /* Ensures there's no unwanted space below the image */
+        /* Ensure the image covers the whole screen */
+        html, body {
+            height: 100%;  /* Make sure the body takes up full screen height */
         }
 
-        /* Body styles to ensure full-page image display */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #fff;  /* White background */
-            overflow-x: hidden;  /* Prevents horizontal scroll */
+        img {
+            object-fit: cover;  /* Ensures the image covers the entire screen without distortion */
+            width: 100%;         /* Stretch the image to fit the screen width */
+            height: 100%;        /* Stretch the image to fill the screen height */
+            display: block;      /* Removes space below the image */
         }
     </style>
 </head>
 <body>
 
-    <!-- Image will fill the entire screen width, no title or text -->
+    <!-- Image will fill the entire screen -->
     <img src="IMG_3168.jpeg" alt="Character Image">
 
 </body>
