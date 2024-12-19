@@ -4,45 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Make sure the page uses the full height of the screen */
+        /* Remove default margins and padding from the body and html */
         html, body {
-            height: 100%;  /* Take up full screen height */
-            margin: 0;     /* Remove default margin */
-            padding: 0;    /* Remove default padding */
+            height: 100%;     /* Take up the full height of the screen */
+            margin: 0;        /* Remove default margins */
+            padding: 0;       /* Remove default padding */
         }
 
-        /* Ensure the image covers the entire screen without distortion */
+        /* Ensure the image covers the entire screen */
         img {
-            object-fit: cover;  /* Ensures the image covers the screen completely */
-            width: 100%;         /* Ensure image fills the full width */
-            height: 100%;        /* Ensure image fills the full height */
-            position: absolute;  /* Remove the image from normal flow to make it fill the screen */
-            top: 0;              /* Position the image from the top of the screen */
-            left: 0;             /* Position the image from the left of the screen */
-            z-index: -1;         /* Make sure the image stays in the background */
+            object-fit: cover;  /* Makes the image cover the screen without distortion */
+            width: 100%;         /* Make the image take the full width */
+            height: 100%;        /* Make the image take the full height */
+            position: absolute;  /* Position the image at the top-left corner */
+            top: 0;              /* Position it to the top */
+            left: 0;             /* Position it to the left */
+            z-index: -1;         /* Place the image behind the content */
         }
 
-        /* Styling for any text or content */
+        /* Content styling (text will be placed over the image) */
         .content {
             position: relative;
-            z-index: 1;          /* Ensure the text is above the image */
-            padding: 20px;       /* Add some space around the text */
-            color: white;        /* Text color */
-            font-family: Arial, sans-serif; /* Set a clean font */
-            font-size: 24px;     /* Set a readable font size */
-            line-height: 1.5;    /* Make sure lines of text are well spaced */
+            z-index: 1;           /* Ensure text is on top of the image */
+            padding: 20px;        /* Padding around the text */
+            color: white;         /* Make the text white for visibility */
+            font-family: Arial, sans-serif; /* Clean font for the text */
+            font-size: 24px;      /* Size the text to be readable */
+            line-height: 1.5;     /* Make sure the text is spaced out well */
         }
     </style>
 </head>
 <body>
 
-    <!-- Content (text or other elements you want over the image) -->
+    <!-- Text content (on top of the image) -->
     <div class="content">
         <h1>My Character</h1>
-        <p>This is some text about the character. The image will fill the entire screen, and the text will stay visible on top of it.</p>
+        <p>This text will stay visible on top of the image, no matter the screen size or orientation.</p>
     </div>
 
-    <!-- The image that will fill the whole screen -->
+    <!-- Image that fills the whole screen -->
     <img src="IMG_3168.jpeg" alt="Character Image">
 
 </body>
