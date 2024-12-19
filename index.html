@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Image</title>
     <style>
-        /* Ensure body and html take up the full height of the screen */
+        /* Make sure html and body take up the full height of the screen */
         html, body {
             height: 100%;        /* Full height of the screen */
             margin: 0;           /* Remove default margins */
             padding: 0;          /* Remove default padding */
         }
 
-        /* The image should cover the whole screen */
+        /* The image should cover the full screen in both portrait and landscape modes */
         img {
             object-fit: cover;   /* Image will cover the entire screen */
-            width: 100%;          /* Ensure the image takes full width */
-            height: 100%;         /* Ensure the image takes full height */
-            position: absolute;   /* Position the image absolutely to fill screen */
-            top: 0;               /* Place the image at the top */
-            left: 0;              /* Place the image at the left */
-            z-index: -1;          /* Keep the image behind anything else */
+            width: 100vw;         /* Image takes the full width of the screen */
+            height: 100vh;        /* Image takes the full height of the screen */
+            position: fixed;      /* Fixed positioning to cover the screen */
+            top: 0;               /* Place image at the top of the screen */
+            left: 0;              /* Place image at the left of the screen */
         }
     </style>
 </head>
 <body>
 
-    <!-- Image that will fill the entire screen -->
+    <!-- Image will fill the entire screen -->
     <img src="IMG_3168.jpeg" alt="Character Image">
 
 </body>
