@@ -9,24 +9,24 @@
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;       /* Ensure full screen height */
-            overflow: hidden;   /* Prevent scrolling */
+            height: 100%;
+            overflow: hidden;  /* Prevent scrolling */
         }
 
-        /* Image should fully cover the screen in all orientations */
+        /* Image should always fit the full screen */
         img {
-            object-fit: cover;  /* Ensures image covers screen while keeping aspect ratio */
-            width: 100vw;       /* Full viewport width */
-            height: 100vh;      /* Full viewport height */
-            position: absolute; /* Fix image to screen */
+            position: absolute;  /* Position it to fill the entire screen */
             top: 0;
             left: 0;
+            width: 100vw;         /* Viewport width: fill 100% of the screen width */
+            height: 100vh;        /* Viewport height: fill 100% of the screen height */
+            object-fit: cover;    /* Image will cover the entire screen */
         }
     </style>
 </head>
 <body>
 
-    <!-- Full-screen image -->
+    <!-- Full-screen image that adapts to any screen size -->
     <img src="IMG_3168.jpeg" alt="Character Image">
 
 </body>
