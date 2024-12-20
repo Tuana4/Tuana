@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Fullscreen Image</title>
+    <title>Fullscreen Image</title>
     <style>
         /* Reset default margin and padding */
         * {
@@ -19,17 +19,20 @@
             overflow: hidden; /* Prevent scrolling */
         }
 
-        /* Container to hold the image */
+        /* Fullscreen image container */
         .image-container {
             width: 100%;
             height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Fullscreen Image */
+        /* Fullscreen image */
         img {
             width: 100%;
             height: 100%;
-            object-fit: fill; /* Forces the image to stretch to fill the screen */
+            object-fit: cover; /* Covers the screen completely */
         }
     </style>
 </head>
