@@ -1,22 +1,40 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Responsive Image</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+        /* Ensure body and HTML take up full space */
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+        }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures no black spaces */
-    object-position: center; /* Keeps the image centered */
-}
+        /* Fullscreen image without black spaces */
+        .image-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure no black spaces */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="IMG_3183.jpeg" alt="Responsive Image">
+    </div>
+</body>
+</html>
