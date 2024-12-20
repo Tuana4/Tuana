@@ -3,116 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Sketch</title>
+    <title>Fullscreen Responsive Image</title>
     <style>
-        body {
+        /* Reset default styles */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #ACDFA2; /* Background color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Full-screen height */
-            overflow: hidden; /* Prevent scrolling */
-            font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
 
-        #container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+        /* Ensure body and HTML take up full space */
+        html, body {
+            width: 100%;
             height: 100%;
+            overflow: hidden; /* Prevent scrolling */
         }
 
-        .stage {
-            display: none; /* Hide all stages initially */
-            flex-direction: column;
+        /* Center image within the viewport */
+        .image-container {
+            display: flex;
+            justify-content: center;
             align-items: center;
+            width: 100%;
+            height: 100%;
+            background: #ACDFA2; /* Matches the correct green color */
         }
 
-        .stage.active {
-            display: flex; /* Show the active stage */
-        }
-
+        /* Responsive image styles */
         img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
-            margin-bottom: 20px;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensures full image visibility */
+            cursor: pointer; /* Makes the image clickable */
         }
 
-        .quote {
-            font-size: 1.5em;
-            color: #333;
-            cursor: pointer; /* Makes the text clickable */
-            text-align: center;
-            line-height: 1.5;
+        /* Ensure consistent behavior on smaller devices */
+        @media (max-width: 768px) {
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
 
-        .line {
-            width: 80%;
-            height: 2px;
-            background-color: #333;
-            margin: 10px auto 0 auto;
-            cursor: pointer; /* Makes the line clickable */
+        /* For landscape orientation */
+        @media (orientation: landscape) {
+            img {
+                height: 100%;
+                width: auto;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <!-- Stage 1 -->
-        <div id="stage-1" class="stage active">
-            <img src="IMG_3168.jpeg" alt="Add the head">
-            <div class="quote" onclick="showStage(2)">"Add the head"</div>
-            <div class="line" onclick="showStage(2)"></div>
-        </div>
+    <!-- Stage 1 -->
+    <div id="stage-1" class="image-container">
+        <img src="IMG_3168.jpeg" alt="Add the head" onclick="showStage(2)">
+    </div>
 
-        <!-- Stage 2 -->
-        <div id="stage-2" class="stage">
-            <img src="IMG_3169.jpeg" alt="Draw the eyes and brows">
-            <div class="quote" onclick="showStage(3)">"Draw the eyes and brows"</div>
-            <div class="line" onclick="showStage(3)"></div>
-        </div>
+    <!-- Stage 2 -->
+    <div id="stage-2" class="image-container" style="display: none;">
+        <img src="IMG_3169.jpeg" alt="Draw the eyes and brows" onclick="showStage(3)">
+    </div>
 
-        <!-- Stage 3 -->
-        <div id="stage-3" class="stage">
-            <img src="IMG_3170.jpeg" alt="Draw the nose and mouth">
-            <div class="quote" onclick="showStage(4)">"Draw the nose and mouth"</div>
-            <div class="line" onclick="showStage(4)"></div>
-        </div>
+    <!-- Stage 3 -->
+    <div id="stage-3" class="image-container" style="display: none;">
+        <img src="IMG_3170.jpeg" alt="Draw the nose and mouth" onclick="showStage(4)">
+    </div>
 
-        <!-- Stage 4 -->
-        <div id="stage-4" class="stage">
-            <img src="IMG_3171.jpeg" alt="Draw the hair">
-            <div class="quote" onclick="showStage(5)">"Draw the hair"</div>
-            <div class="line" onclick="showStage(5)"></div>
-        </div>
+    <!-- Stage 4 -->
+    <div id="stage-4" class="image-container" style="display: none;">
+        <img src="IMG_3171.jpeg" alt="Draw the hair" onclick="showStage(5)">
+    </div>
 
-        <!-- Stage 5 -->
-        <div id="stage-5" class="stage">
-            <img src="IMG_3172.jpeg" alt="Add green">
-            <div class="quote" onclick="showStage(6)">"Add green"</div>
-            <div class="line" onclick="showStage(6)"></div>
-        </div>
+    <!-- Stage 5 -->
+    <div id="stage-5" class="image-container" style="display: none;">
+        <img src="IMG_3172.jpeg" alt="Add green" onclick="showStage(6)">
+    </div>
 
-        <!-- Stage 6 -->
-        <div id="stage-6" class="stage">
-            <img src="IMG_3173.jpeg" alt="Start over">
-            <div class="quote" onclick="showStage(1)">"Start over"</div>
-            <div class="line" onclick="showStage(1)"></div>
-        </div>
+    <!-- Stage 6 -->
+    <div id="stage-6" class="image-container" style="display: none;">
+        <img src="IMG_3173.jpeg" alt="Start over" onclick="showStage(1)">
     </div>
 
     <script>
         function showStage(stageNumber) {
             // Hide all stages
-            const stages = document.querySelectorAll('.stage');
-            stages.forEach(stage => stage.classList.remove('active'));
+            const stages = document.querySelectorAll('.image-container');
+            stages.forEach(stage => stage.style.display = 'none');
 
             // Show the selected stage
-            document.getElementById(`stage-${stageNumber}`).classList.add('active');
+            document.getElementById(`stage-${stageNumber}`).style.display = 'flex';
         }
     </script>
 </body>
