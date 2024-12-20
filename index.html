@@ -16,36 +16,23 @@
         body, html {
             width: 100%;
             height: 100%;
+            background-color: #90ee90; /* Optional: Matches the green background */
         }
 
-        /* Flex container to center the image */
+        /* Image container */
         .image-container {
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 100vh; /* Full screen height */
-            overflow: hidden;
         }
 
-        /* Make the image fully responsive */
+        /* Make the image fill the screen without distortion */
         img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto; /* Maintain aspect ratio */
-            height: auto;
-            object-fit: contain; /* Ensure the entire image is visible */
-        }
-
-        /* Special handling for iPads in landscape mode */
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .image-container {
-                padding: 5%;
-            }
-
-            img {
-                object-fit: contain; /* Ensures the image scales properly on iPads */
-            }
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the screen */
         }
     </style>
 </head>
