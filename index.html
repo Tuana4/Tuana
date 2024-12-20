@@ -8,17 +8,14 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: "Arial", sans-serif;
-            background-color: #ABDEA1; /* Background color */
-            text-align: center;
-            color: #333;
+            background-color: #ABDEA1; /* Matches background color */
         }
 
         .stage {
             display: none; /* Hide all stages initially */
             height: 100vh;
+            width: 100vw;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
@@ -28,25 +25,10 @@
         }
 
         img {
-            max-width: 80%;
-            height: auto;
-            border: 2px solid #333;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .button:hover {
-            background-color: #555;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            cursor: pointer; /* Makes the image clickable */
         }
     </style>
 </head>
@@ -54,54 +36,35 @@
 
     <!-- Stage 1 -->
     <div class="stage active" id="stage-1">
-        <h1>Unfold the sketch</h1>
-        <p>Shape the character step by step. Click below to begin.</p>
-        <img src="IMG_3168.jpeg" alt="Add the head">
-        <button class="button" onclick="nextStage(2)">Add the head</button>
+        <img src="IMG_3168.jpeg" alt="Add the head" onclick="nextStage(2)">
     </div>
 
     <!-- Stage 2 -->
     <div class="stage" id="stage-2">
-        <h1>Unfold the sketch</h1>
-        <p>Click below to give the character expression.</p>
-        <img src="IMG_3169.jpeg" alt="Draw the eyes and brows">
-        <button class="button" onclick="nextStage(3)">Draw the eyes and brows</button>
+        <img src="IMG_3169.jpeg" alt="Draw the eyes and brows" onclick="nextStage(3)">
     </div>
 
     <!-- Stage 3 -->
     <div class="stage" id="stage-3">
-        <h1>Unfold the sketch</h1>
-        <p>Click below to shape the nose and mouth.</p>
-        <img src="IMG_3170.jpeg" alt="Draw the nose and mouth">
-        <button class="button" onclick="nextStage(4)">Draw the nose and mouth</button>
+        <img src="IMG_3170.jpeg" alt="Draw the nose and mouth" onclick="nextStage(4)">
     </div>
 
     <!-- Stage 4 -->
     <div class="stage" id="stage-4">
-        <h1>Unfold the sketch</h1>
-        <p>Click below to draw the hair.</p>
-        <img src="IMG_3171.jpeg" alt="Draw the hair">
-        <button class="button" onclick="nextStage(5)">Draw the hair</button>
+        <img src="IMG_3171.jpeg" alt="Draw the hair" onclick="nextStage(5)">
     </div>
 
     <!-- Stage 5 -->
     <div class="stage" id="stage-5">
-        <h1>Unfold the sketch</h1>
-        <p>Click below to add green to the character.</p>
-        <img src="IMG_3172.jpeg" alt="Add green">
-        <button class="button" onclick="nextStage(6)">Click to add green</button>
+        <img src="IMG_3172.jpeg" alt="Add green" onclick="nextStage(6)">
     </div>
 
     <!-- Stage 6 -->
     <div class="stage" id="stage-6">
-        <h1>Unfold the sketch</h1>
-        <p>Start over to create the character again.</p>
-        <img src="IMG_3173.jpeg" alt="Start over">
-        <button class="button" onclick="nextStage(1)">Start over</button>
+        <img src="IMG_3173.jpeg" alt="Start over" onclick="nextStage(1)">
     </div>
 
     <script>
-        // JavaScript to handle the stages
         function nextStage(stageNumber) {
             // Hide all stages
             const stages = document.querySelectorAll('.stage');
