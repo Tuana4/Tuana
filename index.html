@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Responsive Image</title>
+    <title>Interactive Sketch</title>
     <style>
         /* Reset default styles */
         * {
@@ -17,82 +17,78 @@
             width: 100%;
             height: 100%;
             overflow: hidden; /* Prevent scrolling */
+            background-color: #ACDFA2; /* Matches the green background */
         }
 
-        /* Center image within the viewport */
+        /* Center image and set background color */
         .image-container {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
             height: 100%;
-            background: #ACDFA2; /* Matches the correct green color */
         }
 
         /* Responsive image styles */
         img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Ensures full image visibility */
-            cursor: pointer; /* Makes the image clickable */
+            object-fit: contain;
         }
 
-        /* Ensure consistent behavior on smaller devices */
-        @media (max-width: 768px) {
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        /* For landscape orientation */
-        @media (orientation: landscape) {
-            img {
-                height: 100%;
-                width: auto;
-            }
+        /* Clickable area for the quote and line */
+        .clickable {
+            position: absolute;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0); /* Fully transparent */
         }
     </style>
 </head>
 <body>
     <!-- Stage 1 -->
-    <div id="stage-1" class="image-container">
-        <img src="IMG_3168.jpeg" alt="Add the head" onclick="showStage(2)">
+    <div class="image-container">
+        <img src="IMG_3168.jpeg" alt="Add the head">
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(2)"></div>
     </div>
 
     <!-- Stage 2 -->
-    <div id="stage-2" class="image-container" style="display: none;">
-        <img src="IMG_3169.jpeg" alt="Draw the eyes and brows" onclick="showStage(3)">
+    <div class="image-container" style="display: none;">
+        <img src="IMG_3169.jpeg" alt="Draw the eyes and brows">
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(3)"></div>
     </div>
 
     <!-- Stage 3 -->
-    <div id="stage-3" class="image-container" style="display: none;">
-        <img src="IMG_3170.jpeg" alt="Draw the nose and mouth" onclick="showStage(4)">
+    <div class="image-container" style="display: none;">
+        <img src="IMG_3170.jpeg" alt="Draw the nose and mouth">
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(4)"></div>
     </div>
 
     <!-- Stage 4 -->
-    <div id="stage-4" class="image-container" style="display: none;">
-        <img src="IMG_3171.jpeg" alt="Draw the hair" onclick="showStage(5)">
+    <div class="image-container" style="display: none;">
+        <img src="IMG_3171.jpeg" alt="Draw the hair">
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(5)"></div>
     </div>
 
     <!-- Stage 5 -->
-    <div id="stage-5" class="image-container" style="display: none;">
-        <img src="IMG_3172.jpeg" alt="Add green" onclick="showStage(6)">
+    <div class="image-container" style="display: none;">
+        <img src="IMG_3172.jpeg" alt="Click to add green">
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(6)"></div>
     </div>
 
-    <!-- Stage 6 -->
-    <div id="stage-6" class="image-container" style="display: none;">
-        <img src="IMG_3173.jpeg" alt="Start over" onclick="showStage(1)">
+    <!-- Restart Stage -->
+    <div class="image-container" style="display: none;">
+        <img src="IMG_3173.jpeg" alt="Start over">
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(1)"></div>
     </div>
 
     <script>
-        function showStage(stageNumber) {
-            // Hide all stages
-            const stages = document.querySelectorAll('.image-container');
-            stages.forEach(stage => stage.style.display = 'none');
-
-            // Show the selected stage
-            document.getElementById(`stage-${stageNumber}`).style.display = 'flex';
+        // JavaScript function to navigate between stages
+        function goToStage(stageNumber) {
+            const allStages = document.querySelectorAll('.image-container');
+            allStages.forEach((stage, index) => {
+                stage.style.display = (index === stageNumber - 1) ? 'flex' : 'none';
+            });
         }
     </script>
 </body>
