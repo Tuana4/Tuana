@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Responsive Image</title>
+    <title>Responsive Fullscreen Image</title>
     <style>
-        /* Reset default styles */
-        * {
+        /* Remove all default margins and paddings */
+        html, body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Ensure body and HTML take up full space */
-        html, body {
             width: 100%;
             height: 100%;
             overflow: hidden; /* Prevent scrolling */
         }
 
-        /* Fullscreen image without black spaces */
+        /* Fullscreen container */
         .image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
         }
 
+        /* Responsive image */
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure no black spaces */
+            object-fit: cover; /* Ensures the image fills the screen without black spaces */
+            object-position: center; /* Centers the image content */
         }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img src="IMG_3183.jpeg" alt="Responsive Image">
+        <img src="IMG_3183.jpeg" alt="Responsive Fullscreen Image">
     </div>
 </body>
 </html>
