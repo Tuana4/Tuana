@@ -14,6 +14,7 @@
             align-items: center;
             height: 100vh; /* Full-screen height */
             overflow: hidden; /* Prevent scrolling */
+            font-family: Arial, sans-serif;
         }
 
         #container {
@@ -21,64 +22,97 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100%;
             text-align: center;
+            height: 100%;
+        }
+
+        .stage {
+            display: none; /* Hide all stages initially */
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stage.active {
+            display: flex; /* Show the active stage */
         }
 
         img {
             max-width: 80%;
             max-height: 80%;
             object-fit: contain;
-            cursor: pointer; /* Makes the image clickable */
+            margin-bottom: 20px;
         }
 
-        .hidden {
-            display: none;
+        .quote {
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer; /* Makes the text clickable */
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .line {
+            width: 80%;
+            height: 2px;
+            background-color: #333;
+            margin: 10px auto 0 auto;
+            cursor: pointer; /* Makes the line clickable */
         }
     </style>
 </head>
 <body>
-    <!-- Container for interactive content -->
     <div id="container">
         <!-- Stage 1 -->
-        <div id="stage-1">
-            <img src="IMG_3168.jpeg" alt="Add the head" onclick="showStage(2)">
+        <div id="stage-1" class="stage active">
+            <img src="IMG_3168.jpeg" alt="Add the head">
+            <div class="quote" onclick="showStage(2)">"Add the head"</div>
+            <div class="line" onclick="showStage(2)"></div>
         </div>
 
         <!-- Stage 2 -->
-        <div id="stage-2" class="hidden">
-            <img src="IMG_3169.jpeg" alt="Draw the eyes and brows" onclick="showStage(3)">
+        <div id="stage-2" class="stage">
+            <img src="IMG_3169.jpeg" alt="Draw the eyes and brows">
+            <div class="quote" onclick="showStage(3)">"Draw the eyes and brows"</div>
+            <div class="line" onclick="showStage(3)"></div>
         </div>
 
         <!-- Stage 3 -->
-        <div id="stage-3" class="hidden">
-            <img src="IMG_3170.jpeg" alt="Draw the nose and mouth" onclick="showStage(4)">
+        <div id="stage-3" class="stage">
+            <img src="IMG_3170.jpeg" alt="Draw the nose and mouth">
+            <div class="quote" onclick="showStage(4)">"Draw the nose and mouth"</div>
+            <div class="line" onclick="showStage(4)"></div>
         </div>
 
         <!-- Stage 4 -->
-        <div id="stage-4" class="hidden">
-            <img src="IMG_3171.jpeg" alt="Draw the hair" onclick="showStage(5)">
+        <div id="stage-4" class="stage">
+            <img src="IMG_3171.jpeg" alt="Draw the hair">
+            <div class="quote" onclick="showStage(5)">"Draw the hair"</div>
+            <div class="line" onclick="showStage(5)"></div>
         </div>
 
         <!-- Stage 5 -->
-        <div id="stage-5" class="hidden">
-            <img src="IMG_3172.jpeg" alt="Add green" onclick="showStage(6)">
+        <div id="stage-5" class="stage">
+            <img src="IMG_3172.jpeg" alt="Add green">
+            <div class="quote" onclick="showStage(6)">"Add green"</div>
+            <div class="line" onclick="showStage(6)"></div>
         </div>
 
         <!-- Stage 6 -->
-        <div id="stage-6" class="hidden">
-            <img src="IMG_3173.jpeg" alt="Start over" onclick="showStage(1)">
+        <div id="stage-6" class="stage">
+            <img src="IMG_3173.jpeg" alt="Start over">
+            <div class="quote" onclick="showStage(1)">"Start over"</div>
+            <div class="line" onclick="showStage(1)"></div>
         </div>
     </div>
 
     <script>
         function showStage(stageNumber) {
             // Hide all stages
-            const stages = document.querySelectorAll('[id^="stage"]');
-            stages.forEach(stage => stage.classList.add('hidden'));
+            const stages = document.querySelectorAll('.stage');
+            stages.forEach(stage => stage.classList.remove('active'));
 
             // Show the selected stage
-            document.getElementById(`stage-${stageNumber}`).classList.remove('hidden');
+            document.getElementById(`stage-${stageNumber}`).classList.add('active');
         }
     </script>
 </body>
