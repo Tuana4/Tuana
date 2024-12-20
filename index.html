@@ -3,59 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Responsive Image</title>
+    <title>Fullscreen Image</title>
     <style>
-        /* Reset default styles */
-        * {
+        html, body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Ensure body and HTML take up full space */
-        html, body {
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden; /* No scrollbars */
         }
 
-        /* Center image within the viewport */
         .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: #000; /* Fallback background color */
         }
 
-        /* Responsive image styles */
         img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Ensures full image visibility */
-        }
-
-        /* Ensure consistent behavior on smaller devices */
-        @media (max-width: 768px) {
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        /* For landscape orientation */
-        @media (orientation: landscape) {
-            img {
-                height: 100%;
-                width: auto;
-            }
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* No black spaces */
         }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img src="IMG_3183.jpeg" alt="Responsive Image">
+        <img src="IMG_3183.jpeg" alt="Fullscreen Image">
     </div>
 </body>
 </html>
