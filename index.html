@@ -47,48 +47,49 @@
 </head>
 <body>
     <!-- Stage 1 -->
-    <div class="image-container">
+    <div class="image-container" id="stage-1">
         <img src="IMG_3168.jpeg" alt="Add the head">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(2)"></div>
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-2')"></div>
     </div>
 
     <!-- Stage 2 -->
-    <div class="image-container" style="display: none;">
+    <div class="image-container" id="stage-2" style="display: none;">
         <img src="IMG_3169.jpeg" alt="Draw the eyes and brows">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(3)"></div>
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-3')"></div>
     </div>
 
     <!-- Stage 3 -->
-    <div class="image-container" style="display: none;">
+    <div class="image-container" id="stage-3" style="display: none;">
         <img src="IMG_3170.jpeg" alt="Draw the nose and mouth">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(4)"></div>
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-4')"></div>
     </div>
 
     <!-- Stage 4 -->
-    <div class="image-container" style="display: none;">
+    <div class="image-container" id="stage-4" style="display: none;">
         <img src="IMG_3171.jpeg" alt="Draw the hair">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(5)"></div>
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-5')"></div>
     </div>
 
     <!-- Stage 5 -->
-    <div class="image-container" style="display: none;">
+    <div class="image-container" id="stage-5" style="display: none;">
         <img src="IMG_3172.jpeg" alt="Click to add green">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(6)"></div>
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-6')"></div>
     </div>
 
     <!-- Restart Stage -->
-    <div class="image-container" style="display: none;">
+    <div class="image-container" id="stage-6" style="display: none;">
         <img src="IMG_3173.jpeg" alt="Start over">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage(1)"></div>
+        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-1')"></div>
     </div>
 
     <script>
-        // JavaScript function to navigate between stages
-        function goToStage(stageNumber) {
+        function goToStage(stageId) {
+            // Hide all stages
             const allStages = document.querySelectorAll('.image-container');
-            allStages.forEach((stage, index) => {
-                stage.style.display = (index === stageNumber - 1) ? 'flex' : 'none';
-            });
+            allStages.forEach(stage => stage.style.display = 'none');
+
+            // Show the selected stage
+            document.getElementById(stageId).style.display = 'flex';
         }
     </script>
 </body>
