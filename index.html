@@ -5,43 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Sketch</title>
     <style>
-        /* Reset default styles */
+        /* Reset styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Ensure body and HTML take up full space */
+        /* Fullscreen setup */
         html, body {
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Prevent scrolling */
-            background-color: #ACDFA2; /* Matches the green background */
+            background-color: #ACDFA2; /* Matches green background */
+            overflow: hidden; /* No scrolling */
         }
 
-        /* Center image and set background color */
+        /* Image container */
         .image-container {
             position: relative;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 100%;
         }
 
-        /* Responsive image styles */
+        /* Images */
         img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
         }
 
-        /* Clickable area for the quote and line */
+        /* Clickable areas for quotes */
         .clickable {
             position: absolute;
             cursor: pointer;
-            background: rgba(255, 255, 255, 0); /* Fully transparent */
+            background: rgba(255, 255, 255, 0); /* Transparent click area */
         }
     </style>
 </head>
@@ -49,37 +49,43 @@
     <!-- Stage 1 -->
     <div class="image-container" id="stage-1">
         <img src="IMG_3168.jpeg" alt="Add the head">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-2')"></div>
+        <!-- Clickable area over the quote and line -->
+        <div class="clickable" style="top: 80%; left: 25%; width: 50%; height: 8%;" onclick="goToStage('stage-2')"></div>
     </div>
 
     <!-- Stage 2 -->
     <div class="image-container" id="stage-2" style="display: none;">
         <img src="IMG_3169.jpeg" alt="Draw the eyes and brows">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-3')"></div>
+        <!-- Clickable area over the quote and line -->
+        <div class="clickable" style="top: 80%; left: 25%; width: 50%; height: 8%;" onclick="goToStage('stage-3')"></div>
     </div>
 
     <!-- Stage 3 -->
     <div class="image-container" id="stage-3" style="display: none;">
         <img src="IMG_3170.jpeg" alt="Draw the nose and mouth">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-4')"></div>
+        <!-- Clickable area over the quote and line -->
+        <div class="clickable" style="top: 80%; left: 25%; width: 50%; height: 8%;" onclick="goToStage('stage-4')"></div>
     </div>
 
     <!-- Stage 4 -->
     <div class="image-container" id="stage-4" style="display: none;">
         <img src="IMG_3171.jpeg" alt="Draw the hair">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-5')"></div>
+        <!-- Clickable area over the quote and line -->
+        <div class="clickable" style="top: 80%; left: 25%; width: 50%; height: 8%;" onclick="goToStage('stage-5')"></div>
     </div>
 
     <!-- Stage 5 -->
     <div class="image-container" id="stage-5" style="display: none;">
         <img src="IMG_3172.jpeg" alt="Click to add green">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-6')"></div>
+        <!-- Clickable area over the quote and line -->
+        <div class="clickable" style="top: 80%; left: 25%; width: 50%; height: 8%;" onclick="goToStage('stage-6')"></div>
     </div>
 
     <!-- Restart Stage -->
     <div class="image-container" id="stage-6" style="display: none;">
         <img src="IMG_3173.jpeg" alt="Start over">
-        <div class="clickable" style="top: 75%; left: 30%; width: 40%; height: 10%;" onclick="goToStage('stage-1')"></div>
+        <!-- Clickable area over the quote and line -->
+        <div class="clickable" style="top: 80%; left: 25%; width: 50%; height: 8%;" onclick="goToStage('stage-1')"></div>
     </div>
 
     <script>
