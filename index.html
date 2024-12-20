@@ -44,11 +44,11 @@
             background: rgba(255, 255, 255, 0); /* Transparent click area */
         }
 
-        /* Ensures proper clickable area size on all devices */
+        /* Adjustments for smaller screens (responsive) */
         @media (max-width: 768px) {
             .clickable {
-                width: 70%; /* Adjust for smaller screens */
-                height: 10%; /* Increase height slightly for easier tapping */
+                width: 80%; /* Adjust for smaller screens */
+                height: 12%; /* Increase height slightly for easier tapping */
             }
         }
     </style>
@@ -57,43 +57,43 @@
     <!-- Stage 1 -->
     <div class="image-container" id="stage-1">
         <img src="IMG_3168.jpeg" alt="Add the head">
-        <!-- Clickable area aligned over the quote and line -->
-        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 10%;" onclick="goToStage('stage-2')"></div>
+        <!-- Clickable area aligned over the quote and the line -->
+        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 15%;" onclick="goToStage('stage-2')"></div>
     </div>
 
     <!-- Stage 2 -->
     <div class="image-container" id="stage-2" style="display: none;">
         <img src="IMG_3169.jpeg" alt="Draw the eyes and brows">
-        <!-- Clickable area aligned over the quote and line -->
-        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 10%;" onclick="goToStage('stage-3')"></div>
+        <!-- Clickable area aligned over the quote and the line -->
+        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 15%;" onclick="goToStage('stage-3')"></div>
     </div>
 
     <!-- Stage 3 -->
     <div class="image-container" id="stage-3" style="display: none;">
         <img src="IMG_3170.jpeg" alt="Draw the nose and mouth">
-        <!-- Clickable area aligned over the quote and line -->
-        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 10%;" onclick="goToStage('stage-4')"></div>
+        <!-- Clickable area aligned over the quote and the line -->
+        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 15%;" onclick="goToStage('stage-4')"></div>
     </div>
 
     <!-- Stage 4 -->
     <div class="image-container" id="stage-4" style="display: none;">
         <img src="IMG_3171.jpeg" alt="Draw the hair">
-        <!-- Clickable area aligned over the quote and line -->
-        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 10%;" onclick="goToStage('stage-5')"></div>
+        <!-- Clickable area aligned over the quote and the line -->
+        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 15%;" onclick="goToStage('stage-5')"></div>
     </div>
 
     <!-- Stage 5 -->
     <div class="image-container" id="stage-5" style="display: none;">
         <img src="IMG_3203.jpeg" alt="Click to add green">
-        <!-- Clickable area aligned over the quote and line -->
-        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 10%;" onclick="goToStage('stage-6')"></div>
+        <!-- Clickable area aligned over the quote and the line -->
+        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 15%;" onclick="goToStage('stage-6')"></div>
     </div>
 
     <!-- Restart Stage -->
     <div class="image-container" id="stage-6" style="display: none;">
         <img src="IMG_3173.jpeg" alt="Start over">
-        <!-- Clickable area aligned over the quote and line -->
-        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 10%;" onclick="goToStage('stage-1')"></div>
+        <!-- Clickable area aligned over the quote and the line -->
+        <div class="clickable" style="top: 80%; left: 15%; width: 70%; height: 15%;" onclick="goToStage('stage-1')"></div>
     </div>
 
     <script>
@@ -108,4 +108,3 @@
     </script>
 </body>
 </html>
-   
